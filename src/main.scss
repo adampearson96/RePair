@@ -1,0 +1,501 @@
+$color-dark-blue: #161D34;
+$color-light-blue: #223C68;
+$color-yellow: #F7D32B;
+$color-orange: #F2A94A;
+$color-red: #F64040;
+$color-white: #ffffff;
+
+// General
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: vinyl, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 245px;
+  line-height: 50px;
+  padding: 0 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+}
+
+h2 {
+  display: block;
+  margin: 0;
+  font-size: 2.125rem;
+  line-height: 0.8823529412;
+}
+
+// Animations
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Header
+header {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(22, 29, 52, .25);
+  z-index: 15;
+  .container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1140px;
+    padding: 1.125rem 1rem;
+    a.logo {
+      flex: 0 1 auto;
+      order: 2;
+      svg {
+        width: auto;
+        height: 25px;
+        fill: $color-white;
+      }
+    }
+    ul.icons {
+      flex: 0 1 auto;
+      order: 3;
+      list-style: none;
+      font-size: 0;
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline-block;
+        width: auto;
+        height: 24px;
+        &#chat,
+        &#profile {
+          display: none;
+        }
+        svg {
+          display: block;
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
+    button.menu-toggle {
+      flex: 0 1 auto;
+      position: relative;
+      order: 1;
+      font-size: 0;
+      width: 21px;
+      height: 24px;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: none;
+      outline: none;
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(22, 29, 52, .25);;
+      }
+      span {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 21px;
+        height: 3px;
+        border-radius: 1px;
+        background: $color-white;
+        &:nth-child(2) {
+          top: 10.5px;
+        }
+        &:nth-child(3) {
+          top: auto;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+// Hero Section
+.hero-section {
+  display: block;
+  position: relative;
+  width: 100%;
+  background: $color-dark-blue;
+  background: linear-gradient(180deg, rgba(34,60,104,1) 0%, rgba(22,29,52,1) 100%);
+  .container {
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1140px;
+    padding: 65px 0 0 0;
+    min-height: 100vh;
+    overflow: hidden;
+    .col {
+      display: block;
+      flex: 0 1 auto;
+      position: relative;
+      padding: 1rem;
+      width: 100%;
+      &.col-1 {
+        padding: 3rem 1rem 1rem 1rem;
+        h2 {
+          color: $color-white;
+          text-align: center;
+          span {
+            color: $color-yellow;
+          }
+        }
+        a.btn {
+          display: none;
+        }
+      }
+      &.col-2 {
+        padding: 1rem 1rem 3rem 1rem;
+        text-align: center;
+        img {
+          max-width: unset;
+          width: 100%;
+          height: auto;
+          position: relative;
+          z-index: 3;
+          animation: 1s reveal ease-in-out;
+          animation-fill-mode: forwards;
+          animation-delay: 1s;
+          opacity: 0;
+        }
+        a.btn {
+          color: $color-white;
+          position: relative;
+          background: $color-dark-blue;
+          font-size: 2.125rem;
+          animation: .5s reveal ease-in-out;
+          animation-fill-mode: forwards;
+          animation-delay: 1.25s;
+          opacity: 0;
+          z-index: 3;
+        }
+        .triangle {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          pointer-events: none;
+          width: 100%;
+          animation: 1s reveal ease-in-out;
+          animation-fill-mode: forwards;
+          opacity: 0;
+          svg {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+          &.blue {
+            z-index: 1;
+            svg {
+              polygon {
+                fill: $color-light-blue;
+              }
+            }
+            
+          }
+          &.yellow {
+            z-index: 2;
+            animation-delay: .25s;
+            svg {
+              polygon {
+                fill: $color-yellow;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+  }
+}
+.row-one {
+  display: block;
+  position: relative;
+  width: 100%;
+  background: $color-dark-blue;
+  background: linear-gradient(180deg, rgba(246,64,64,1) 0%, rgba(34,60,104,1) 100%);
+  .container {
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1140px;
+    overflow: hidden;
+    .col {
+      display: block;
+      flex: 0 1 auto;
+      position: relative;
+      width: 100%;
+      &.col-1 {
+        text-align: right;
+        padding: 2rem 1rem 1rem;
+        h2 {
+          color: $color-white;
+          line-height: 1;
+        }
+        p {
+          color: $color-white;
+          font-size: 1.125rem;
+          line-height: 1;
+          margin: 0;
+          max-width: 145px;
+          margin: 0 0 0 auto;
+        }
+      }
+      &.col-2 {
+        text-align: center;
+        padding: 1rem 1rem 3rem 1rem;
+        img {
+          display: block;
+          width: 575px;
+          max-width: unset;
+          height: auto;
+          margin: -115px 0 0 -200px;
+        }
+        a.btn {
+          background: $color-white;
+          color: #3C3D63;
+          max-width: 100%;
+          width: 100%;
+          font-size: 2.125rem;
+        }
+      }
+    }
+  }
+}
+.row-two {
+  display: block;
+  position: relative;
+  width: 100%;
+  background: $color-white;
+  .container {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    width: 100%;
+    .col {
+      display: block;
+      flex: 0 1 auto;
+      width: 100%;
+      &.col-1 {
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+      &.col-2 {
+        padding: 1rem;
+        .content {
+          display: flex;
+          flex-flow: column wrap;
+          width: 100%;
+          .left {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            img {
+              display: block;
+              width: 154px;
+              max-width: 100%;
+              font-size: 0;
+              flex: 0 1 auto;
+            }
+            .wrapper {
+              display: block;
+              flex: 0 1 auto;
+              span.stars {
+                display: block;
+                svg {
+                  width: auto;
+                  height: .75rem;
+                  margin: 0 0 1rem 0;
+                  path {
+                    fill: $color-orange;
+                  }
+                }
+              }
+              h2 {
+                color: $color-dark-blue;
+              }
+              span.flavour {
+                display: block;
+                font-size: 1.125rem;
+                line-height: 1.6666666667;
+                color: $color-light-blue;
+              }
+              span.price {
+                display: block;
+                color: $color-dark-blue;
+                font-size: 1.75rem;
+                line-height: 1.0714285714;
+              }
+            }
+          }
+          .right {
+            .wrapper {
+              display: none;
+            }
+            ul.options {
+              display: block;
+              list-style-type: none;
+              position: relative;
+              width: 100%;
+              padding: 0;
+              margin: 1rem 0;
+              font-size: 0;
+              li {
+                display: inline-block;
+                width: -ms-calc(20% - .8rem);
+                width: calc(20% - .4rem);
+                margin-right: .5rem;
+                &:last-child {
+                  margin-right: 0;
+                }
+                a {
+                  display: block;
+                  width: 100%;
+                  border: 1px solid #EEEEEE;
+                  border-radius: 4px;
+                  position: relative;
+                  &.active {
+                    border: 1px solid #518C81;
+                    &:after {
+                      display: block;
+                      position: absolute;
+                      content: '';
+                      width: 10px;
+                      height: 17px;
+                      bottom: 0;
+                      right: 0;
+                    }
+                  }
+                }
+              }
+            }
+            a.btn {
+              font-size: 1.5rem;
+              line-height: 40px;
+              width: 100%;
+              max-width: 100%;
+              color: $color-white;
+              svg {
+                display: inline-block;
+                height: 1.5rem;
+                vertical-align: text-top;
+                margin-right: .5rem;
+                path {
+                  fill: $color-white;
+                }
+              }
+              &.add-to-basket {
+                background: $color-light-blue;
+                margin-bottom: 1rem;
+              }
+              &.quick-buy {
+                background: $color-yellow;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.row-three {
+  display: block;
+  position: relative;
+  width: 100%;
+  background: $color-white;
+  .container {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    width: 100%;
+    .col {
+      display: block;
+      flex: 0 1 auto;
+      width: 100%;
+      &.col-1 {
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+      &.col-2 {
+        padding: 1rem;
+        text-align: center;
+        p {
+          color: $color-dark-blue;
+          font-size: 1.25rem;
+          line-height: 1.15;
+          margin: 0;
+        }
+        blockquote {
+          color: $color-dark-blue;
+          font-size: 2.1875rem;
+          line-height: 1.1714285714;
+          margin: 0;
+          span {
+            color: $color-light-blue;
+          }
+        }
+        span.stars {
+          display: block;
+          svg {
+            width: auto;
+            height: 1.875rem;
+            margin: 0 0 1rem 0;
+            path {
+              fill: $color-orange;
+            }
+          }
+        }
+        img.trustpilot-logo {
+          display: block;
+          margin: 1rem auto 2rem auto;
+          width: 172px;
+        }
+        a.btn {
+          background: $color-light-blue;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
