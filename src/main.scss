@@ -446,6 +446,9 @@ nav#primary-navigation {
           max-width: 145px;
           margin: 0 0 0 auto;
         }
+        a.btn {
+          display: none;
+        }
       }
       &.col-2 {
         text-align: center;
