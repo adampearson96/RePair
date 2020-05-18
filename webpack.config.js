@@ -4,6 +4,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|svg|jpg|gif)$/,
+        loader: "file-loader",
+        options: {
+          outputPath: 'images',
+          publicPath: 'dist/images',
+        },
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
           'style-loader',

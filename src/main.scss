@@ -1,3 +1,6 @@
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
 $color-dark-blue: #161D34;
 $color-light-blue: #223C68;
 $color-yellow: #F7D32B;
@@ -398,10 +401,11 @@ header {
                       display: block;
                       position: absolute;
                       content: '';
-                      width: 10px;
-                      height: 17px;
+                      width: 16px;
+                      height: 19px;
                       bottom: 0;
                       right: 0;
+                      background: url(./images/green-tick.png) center/contain no-repeat;
                     }
                   }
                 }
@@ -494,6 +498,176 @@ header {
         a.btn {
           background: $color-light-blue;
           color: $color-white;
+          font-size: 2.125rem;
+        }
+      }
+    }
+  }
+}
+.row-four {
+  display: block;
+  position: relative;
+  width: 100%;
+  background: $color-light-blue;
+  background: linear-gradient(180deg, rgba(34,60,104,1) 0%, rgba(22,29,52,1) 100%);
+  .container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 1rem;
+    .col {
+      display: block;
+      flex: 0 1 auto;
+      width: 100%;
+      &.col-1 {
+        text-align: center;
+        p {
+          font-size: 1.25rem;
+          line-height: 1.75;
+          color: $color-white;
+          margin: 0;
+        }
+        h2 {
+          margin: 0;
+          font-size: 2.1875rem;
+          line-height: 1;
+          color: $color-white;
+        }
+        a.btn {
+          display: none;
+        }
+      }
+      &.col-2 {
+        text-align: center;
+        padding: 1rem 1rem 3rem 1rem;
+        .glide {
+          display: block;
+          width: 100%;
+          .glide__track {
+            .glide__slides {
+              .glide__slide {
+                img {
+                  display: block;
+                  width: 100%;
+                }
+                span.stars {
+                  display: block;
+                  margin: 1rem 0;
+                  svg {
+                    height: .75rem;
+                    path {
+                      fill: $color-orange;
+                    }
+                  }
+                }
+                h3 {
+                  display: block;
+                  color: $color-white;
+                  font-size: 2.125rem;
+                  line-height: 0.8823529412;
+                  margin: 0;
+                }
+                span.availability {
+                  display: block;
+                  font-size: 0.875rem;
+                  line-height: 2.1428571429;
+                  color: rgba(255, 255, 255, .5);
+                }
+                span.price {
+                  display: block;
+                  font-size: 1.75rem;
+                  line-height: 1.875;
+                  color: $color-white;
+                }
+              }
+            }
+          }
+          .glide__bullets {
+            display: block;
+            position: relative;
+            margin-top: 1rem;
+          }
+        }
+        a.btn {
+          background: $color-white;
+          color: $color-dark-blue;
+          font-size: 2.125rem;
+        }
+      }
+    }
+  }
+}
+
+// Footer
+footer {
+  display: block;
+  position: relative;
+  width: 100%;
+  background: $color-dark-blue;
+  .container {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    .wrapper {
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+      padding: 1rem;
+      &.mobile {
+        .col {
+          ul.links {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            li {
+              margin: 0 0 .5rem 0;
+              &:last-child {
+                margin-bottom: 0;
+              }
+              a {
+                font-size: 1rem;
+                line-height: 1.875;
+                color: $color-white;
+                text-decoration: none;
+                svg {
+                  height: 1rem;
+                  vertical-align: text-top;
+                  margin-right: .25rem;
+                  path {
+                    fill: $color-white;
+                  }
+                }
+              }
+              &.logo {
+                a {
+                  svg {
+                    height: 1.5rem;
+                    margin-right: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .col-1 {
+          flex: 0 1 auto;
+          width: 50%;
+          padding-right: .5rem;
+        }
+        .col-2 {
+          flex: 0 1 auto;
+          width: 50%;
+          padding-left: .5rem;
+          ul.links {
+            li {
+              text-align: right;
+            }
+          }
         }
       }
     }
